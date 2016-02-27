@@ -10,7 +10,7 @@
     "generator-test"
   ],
   "dependencies": {
-    "replace": "^0.3.0",
+    "gulp-rename": "^1.2.2",
     "yeoman-generator": "^0.22.5"
   }
 }

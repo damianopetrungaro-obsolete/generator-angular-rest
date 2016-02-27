@@ -1,7 +1,6 @@
 var generators = require('yeoman-generator');
+var rename = require('gulp-rename');
 var helper = require('../../helper.js');
-
-console.log(helper);
 
 module.exports = generators.Base.extend({
   // The name `constructor` is important here
@@ -11,22 +10,20 @@ module.exports = generators.Base.extend({
 
     // This makes `appname` a required argument.
     this.argument('moduleName', { type: String, required: true });
-
   },
   move: function () {
 
+    // Add transform strep Register for manage files before moving
+    this.registerTransformStream(rename({prefix: this.moduleName}));
+
     this.fs.copyTpl(
       this.templatePath(),
-      this.destinationPath(helper.MODULES_PATH + this.moduleName), {
-
-        modulename: this.moduleName,
+      this.destinationPath(helper.MODULES_PATH + this.moduleName + 's'),
+      {
+        modulename: helper.lowercase(this.moduleName),
         modulenameCapitalize: helper.capitalize(this.moduleName),
-        appname: this.config.get('appName')
+        appname: helper.lowercase(this.config.get('appName'))
       }
     );
-
-    // Rename all files created
-    helper.replacer('{module}', this.moduleName, helper.MODULES_PATH);
-
   }
 });

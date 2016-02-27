@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var helper = require('../../helper.js');
 
 module.exports = generators.Base.extend({
   // The name `constructor` is important here
@@ -11,11 +12,11 @@ module.exports = generators.Base.extend({
     this.config.set('appName', this.appName);
 
   },move: function () {
-    
+
     this.fs.copyTpl(
       this.templatePath(),
       this.destinationPath(),
-      { appname: this.appName }
+      { appname: helper.lowercase(this.appName) }
     );
   }
 });
