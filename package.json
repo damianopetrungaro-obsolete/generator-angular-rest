@@ -6,8 +6,11 @@
     "generators/app",
     "generators/module"
   ],
-  "keywords": ["generator-test"],
+  "keywords": [
+    "generator-test"
+  ],
   "dependencies": {
+    "replace": "^0.3.0",
     "yeoman-generator": "^0.22.5"
   }
 }
