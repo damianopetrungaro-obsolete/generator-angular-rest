@@ -30,7 +30,7 @@
         */
 
 
-    	set<%= modulenameCamel %>s();															            // Set the list of <%= modulename %>
+    	set<%= modulenameCapitalize %>s();															            // Set the list of <%= modulename %>
     	mockHelper.configureMocks(getMocks()); 									        // Intercept all the api and add them to the httpBackend
 
 
@@ -67,12 +67,12 @@
                         <%= modulename %>s.splice(i, 1);
 
                         // Return the success header
-                        return [header, {data: '<%= modulenameCamel %> removed'}];
+                        return [header, {data: '<%= modulenameCapitalize %> removed'}];
                     }
                 }
 
 				// Return the error header
-                return [header, {error: '<%= modulenameCamel %> not found'}];
+                return [header, {error: '<%= modulenameCapitalize %> not found'}];
 			}
 
 			// Return the error header
@@ -122,7 +122,7 @@
                 }
 
                 // Return the error header
-    			return [header, {error:'<%= modulenameCamel %> not found'}];
+    			return [header, {error:'<%= modulenameCapitalize %> not found'}];
 			}
 
 			// Return the error header
@@ -146,7 +146,7 @@
                 <%= modulename %>s.push(data);
 
                 // Return the success header
-                return [header, {data: '<%= modulenameCamel %> stored'}];
+                return [header, {data: '<%= modulenameCapitalize %> stored'}];
             }
 
 			// Return the error header
@@ -176,12 +176,12 @@
                         <%= modulename %>s[i] = data;
 
                         // Return the success header
-                        return [header, {data: '<%= modulenameCamel %> updated'}];
+                        return [header, {data: '<%= modulenameCapitalize %> updated'}];
                     }
                 }
 
                 // Return the error header
-    			return [header, {error:'<%= modulenameCamel %> not found'}];
+    			return [header, {error:'<%= modulenameCapitalize %> not found'}];
 			}
 
 			// Return the error header
@@ -258,24 +258,9 @@
 
 
 		// Function for set the array
-		function set<%= modulenameCamel %>s() {
+		function set<%= modulenameCapitalize %>s() {
 
-            <%= modulename %>s = [{
-
-                "id": 1,
-                "name": "Mario",
-                "surname": "Rossi"
-            },
-            {
-                "id": 2,
-                "name": "Luigi",
-                "surname": "Verdi"
-            },
-            {
-                "id": 3,
-                "name": "Furio",
-                "surname": "Bianchi"
-            }];
+            <%= modulename %>s = [];
 		}
 	}
 
