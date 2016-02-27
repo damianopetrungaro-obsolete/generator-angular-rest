@@ -6,16 +6,21 @@ module.exports = generators.Base.extend({
     // Calling the super constructor is important so our generator is correctly set up
     generators.Base.apply(this, arguments);
 
-    // This makes `appname` a required argument.
-    this.argument('appName', { type: String, required: true });
-    this.config.set('appName', this.appName);
 
-  },move: function () {
+    // This makes `appname` a required argument.
+    this.argument('moduleName', { type: String, required: true });
+
+  },
+  move: function () {
 
     this.fs.copyTpl(
       this.templatePath(),
-      this.destinationPath(),
-      { appname: this.appName }
+      this.destinationPath('src/app/modules/' + this.moduleName),
+      {
+        modulename: this.moduleName,
+        modulenameCamel: this.moduleName,
+        appname: this.config.get('appName')
+      }
     );
   }
 });

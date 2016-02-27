@@ -4,7 +4,7 @@
   "description": "",
   "files": [
     "generators/app",
-    "generators/router"
+    "generators/module"
   ],
   "keywords": ["generator-test"],
   "dependencies": {
