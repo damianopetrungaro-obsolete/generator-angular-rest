@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="<%= appname %>">
+<head>
+	<base href="/src/">
+	<title><%= appname %></title>
+
+</head>
+<body>
+	<p><%= appname %></p>
+
+  <div ui-view></div>
+
+</body>
+
+<!-- Modules -->
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../node_modules/angular-mocks/angular-mocks.js" data-server="1.5.0" data-require="angular-mocks@1.5.0"></script>
+
+<!-- Angular -->
+<script src="assets/js/app.js"></script>
+
+<!-- Angular Minified -->
+<!-- <script src="assets/js/app.min.js"></script> -->
+
+</html>
