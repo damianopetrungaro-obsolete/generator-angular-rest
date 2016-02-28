@@ -1,13 +1,13 @@
 {
   "name": "generator-angular-rest",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Generate an angular 1.5 scaffolding, ready for REST API, with a basic mocking setup. Based on John Papa's Style Guide.",
   "author": "Damiano Petrungaro",
   "repository": "damianopetrungaro/angular-scaffolding",
   "license": "MIT",
   "files": [
-    "generators/app",
-    "generators/module"
+    "app",
+    "module"
   ],
   "keywords": [
     "yeoman-generator",
