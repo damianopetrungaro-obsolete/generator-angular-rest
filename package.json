@@ -5,6 +5,7 @@
   "author": "Damiano Petrungaro",
   "repository": "damianopetrungaro/angular-scaffolding",
   "license": "MIT",
+  "main": "app/index.js",
   "files": [
     "app",
     "module"
