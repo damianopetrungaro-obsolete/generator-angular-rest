@@ -2,26 +2,26 @@
 
   'use strict';
 
-    // Pass the <%= modulename %>sStoreCtrl to the app
+    // Pass the <%= modulenamePlural %>StoreCtrl to the app
     angular
         .module('<%= appname %>')
-        .controller('<%= modulename %>sStoreCtrl', <%= modulename %>sStoreCtrl);
+        .controller('<%= modulenamePlural %>StoreCtrl', <%= modulenamePlural %>StoreCtrl);
 
 
-    // Define the <%= modulename %>sStoreCtrl
-    function <%= modulename %>sStoreCtrl(<%= modulename %>sFactory) {
+    // Define the <%= modulenamePlural %>StoreCtrl
+    function <%= modulenamePlural %>StoreCtrl(<%= modulenamePlural %>Factory) {
 
 
         // Inject with ng-annotate
         "ngInject";
 
 
-        // Define <%= modulename %>sStore as this for ControllerAs and auto-$scope
-        var <%= modulename %>sStore = this;
+        // Define <%= modulenamePlural %>Store as this for ControllerAs and auto-$scope
+        var <%= modulenamePlural %>Store = this;
 
 
-        // Define the <%= modulename %>sStore functions and objects that will be passed to the view
-        <%= modulename %>sStore.store = store;                                           // Store a resource
+        // Define the <%= modulenamePlural %>Store functions and objects that will be passed to the view
+        <%= modulenamePlural %>Store.store = store;                                           // Store a resource
 
 
         /*
@@ -42,7 +42,7 @@
         | Functions
         |--------------------------------------------------------------------------
         |
-        | Declaring all functions used in the <%= modulename %>sStoreCtrl
+        | Declaring all functions used in the <%= modulenamePlural %>StoreCtrl
         |
         */
 
@@ -50,14 +50,14 @@
         // Sample for init function
         function initLog() {
 
-            console.log('<%= modulename %>sStoreCtrl init');
+            console.log('<%= modulenamePlural %>StoreCtrl init');
         }
 
 
         // Delete a resource
         function store(data) {
 
-            return <%= modulename %>sFactory.store(data).then(function(data) {
+            return <%= modulenamePlural %>Factory.store(data).then(function(data) {
 
                 // Custom function for success handling
                 console.log('Result form API with SUCCESS', data);

@@ -14,14 +14,16 @@ module.exports = generators.Base.extend({
   move: function () {
 
     // Add transform strep Register for manage files before moving
-    this.registerTransformStream(rename({prefix: this.moduleName}));
+    this.registerTransformStream(rename({prefix: helper.lowercase(helper.plural(this.moduleName)) + '.'}));
 
     this.fs.copyTpl(
       this.templatePath(),
-      this.destinationPath(helper.MODULES_PATH + this.moduleName + 's'),
+      this.destinationPath(helper.MODULES_PATH + helper.lowercase(helper.plural(this.moduleName))),
       {
         modulename: helper.lowercase(this.moduleName),
-        modulenameCapitalize: helper.capitalize(this.moduleName),
+        modulenamePlural: helper.lowercase(helper.plural(this.moduleName)),
+        modulenameCapitalize: helper.capitalize(helper.singular(this.moduleName)),
+        modulenameCapitalizePlural: helper.capitalize(helper.plural(this.moduleName)),
         appname: helper.lowercase(this.config.get('appName'))
       }
     );

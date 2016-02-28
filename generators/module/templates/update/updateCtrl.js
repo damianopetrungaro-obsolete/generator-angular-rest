@@ -2,27 +2,27 @@
 
   'use strict';
 
-    // Pass the <%= modulename %>sDestroyCtrl to the app
+    // Pass the <%= modulenamePlural %>UpdateCtrl to the app
     angular
         .module('<%= appname %>')
-        .controller('<%= modulename %>sDestroyCtrl', <%= modulename %>sDestroyCtrl);
+        .controller('<%= modulenamePlural %>UpdateCtrl', <%= modulenamePlural %>UpdateCtrl);
 
 
-    // Define the <%= modulename %>sDestroyCtrl
-    function <%= modulename %>sDestroyCtrl(<%= modulename %>sFactory, $stateParams) {
+    // Define the <%= modulenamePlural %>UpdateCtrl
+    function <%= modulenamePlural %>UpdateCtrl(<%= modulenamePlural %>Factory, $stateParams) {
 
 
         // Inject with ng-annotate
         "ngInject";
 
 
-        // Define <%= modulename %>sDestroy as this for ControllerAs and auto-$scope
-        var <%= modulename %>sDestroy = this;
+        // Define <%= modulenamePlural %>Update as this for ControllerAs and auto-$scope
+        var <%= modulenamePlural %>Update = this;
 
 
-        // Define the <%= modulename %>sDestroy functions and objects that will be passed to the view
-        <%= modulename %>sDestroy.<%= modulename %> = {};                                                 // Object for show the <%= modulename %>
-        <%= modulename %>sDestroy.destroy = destroy;                                         // Delete a resource
+        // Define the <%= modulenamePlural %>Update functions and objects that will be passed to the view
+        <%= modulenamePlural %>Update.<%= modulename %> = {};                                                  // Object for show the <%= modulename %>
+        <%= modulenamePlural %>Update.update = update;                                            // Update a resource
 
 
         /*
@@ -44,7 +44,7 @@
         | Functions
         |--------------------------------------------------------------------------
         |
-        | Declaring all functions used in the <%= modulename %>sDestroyCtrl
+        | Declaring all functions used in the <%= modulenamePlural %>UpdateCtrl
         |
         */
 
@@ -52,21 +52,21 @@
         // Sample for init function
         function initLog() {
 
-            console.log('<%= modulename %>sDestroyCtrl init');
+            console.log('<%= modulenamePlural %>UpdateCtrl init');
         }
 
 
         // Delete a resource
-        function destroy(id) {
+        function update(id, data) {
 
-            return <%= modulename %>sFactory.destroy(id).then(function(data) {
+            return <%= modulenamePlural %>Factory.update(id, data).then(function(data) {
 
                 // Custom function for success handling
                 console.log('Result form API with SUCCESS', data);
 
             }, function(data) {
 
-            	// Custom function for error handling
+                // Custom function for error handling
                 console.log('Result form API with ERROR', data);
 
             });
@@ -76,14 +76,14 @@
         // Get the <%= modulename %>
         function show(id) {
 
-            return <%= modulename %>sFactory.show(id).then(function(data) {
+            return <%= modulenamePlural %>Factory.show(id).then(function(data) {
 
                 // Custom function for success handling
                 console.log('Result form API with SUCCESS', data);
 
                 // Assign data to array and return them
-                <%= modulename %>sDestroy.<%= modulename %> = data;
-                return <%= modulename %>sDestroy.<%= modulename %>;
+                <%= modulenamePlural %>Update.<%= modulename %> = data;
+                return <%= modulenamePlural %>Update.<%= modulename %>;
 
             }, function(data) {
 

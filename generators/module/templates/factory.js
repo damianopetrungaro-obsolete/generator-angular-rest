@@ -2,14 +2,14 @@
 
   'use strict';
 
-    // Pass the <%= modulename %>sFactory to the app
+    // Pass the <%= modulenamePlural %>Factory to the app
     angular
         .module('<%= appname %>')
-        .factory('<%= modulename %>sFactory', <%= modulename %>sFactory);
+        .factory('<%= modulenamePlural %>Factory', <%= modulenamePlural %>Factory);
 
 
-    // Define the <%= modulename %>sFactory
-    function <%= modulename %>sFactory($http) {
+    // Define the <%= modulenamePlural %>Factory
+    function <%= modulenamePlural %>Factory($http) {
 
 
         // Inject with ng-annotate
@@ -17,11 +17,11 @@
 
 
         // Define base URI for <%= modulename %> <%= modulename %>
-        var <%= modulename %>Base = '/api/<%= modulename %>s/';
+        var <%= modulename %>Base = '/api/<%= modulenamePlural %>/';
 
 
         // Define the <%= modulename %> factory object to return
-        var <%= modulename %>sFactory = {
+        var <%= modulenamePlural %>Factory = {
 
             index: index,
             show: show,
@@ -33,7 +33,7 @@
 
 
         // Return the <%= modulename %> factory
-        return <%= modulename %>sFactory;
+        return <%= modulenamePlural %>Factory;
 
 
         /*
@@ -41,12 +41,12 @@
         | Functions
         |--------------------------------------------------------------------------
         |
-        | Declaring all functions used in the <%= modulename %>sFactory
+        | Declaring all functions used in the <%= modulenamePlural %>Factory
         |
         */
 
 
-        // Display a listing of <%= modulename %>s.
+        // Display a listing of <%= modulenamePlural %>.
         function index() {
 
             return $http.get(<%= modulename %>Base)

@@ -2,14 +2,14 @@
 
   'use strict';
 
-    // Pass the <%= modulename %>sMock to the app
+    // Pass the <%= modulenamePlural %>Mock to the app
 	angular
 	    .module('<%= appname %>')
-	    .run(<%= modulename %>sMock);
+	    .run(<%= modulenamePlural %>Mock);
 
 
-	// Define the <%= modulename %>sMock
-    function <%= modulename %>sMock(mockHelper) {
+	// Define the <%= modulenamePlural %>Mock
+    function <%= modulenamePlural %>Mock(mockHelper) {
 
 
         // Inject with ng-annotate
@@ -17,7 +17,7 @@
 
 
         // Object for <%= modulename %>'s mock
-        var <%= modulename %>s = {};
+        var <%= modulenamePlural %> = {};
 
 
         /*
@@ -30,7 +30,7 @@
         */
 
 
-    	set<%= modulenameCapitalize %>s();															            // Set the list of <%= modulename %>
+    	set<%= modulenameCapitalizePlural %>();															            // Set the list of <%= modulename %>
     	mockHelper.configureMocks(getMocks()); 									        // Intercept all the api and add them to the httpBackend
 
 
@@ -40,12 +40,12 @@
 	    | Functions
 	    |--------------------------------------------------------------------------
 	    |
-	    | Declaring all functions used in the <%= modulename %>sMock
+	    | Declaring all functions used in the <%= modulenamePlural %>Mock
 	    |
 	    */
 
 
-		// Function for destroy <%= modulename %>s API
+		// Function for destroy <%= modulenamePlural %> API
 		function destroyRespond(method, url, data, headers, params) {
 
             // Get the id param from url
@@ -58,13 +58,13 @@
 			if(header == 200) {
 
                 // Delete <%= modulename %> by id from <%= modulename %>'s array
-                for(var i = 0; i <= <%= modulename %>s.length - 1; i++) {
+                for(var i = 0; i <= <%= modulenamePlural %>.length - 1; i++) {
 
                     // If <%= modulename %> exists
-                    if(<%= modulename %>s[i].id == id) {
+                    if(<%= modulenamePlural %>[i].id == id) {
 
                         // Delete  <%= modulename %>
-                        <%= modulename %>s.splice(i, 1);
+                        <%= modulenamePlural %>.splice(i, 1);
 
                         // Return the success header
                         return [header, {data: '<%= modulenameCapitalize %> removed'}];
@@ -80,7 +80,7 @@
 		}
 
 
-		// Function for index <%= modulename %>s API
+		// Function for index <%= modulenamePlural %> API
 		function indexRespond(method, url, data, headers, params) {
 
 			// Get a random header
@@ -90,15 +90,15 @@
 			if(header == 200) {
 
 				// Return the success header
-                return [header, {data: <%= modulename %>s}];
+                return [header, {data: <%= modulenamePlural %>}];
 			}
 
 			// Return the error header
-			return [header, {error:'Error while listing <%= modulename %>s'}];
+			return [header, {error:'Error while listing <%= modulenamePlural %>'}];
 		}
 
 
-		// Function for show <%= modulename %>s API
+		// Function for show <%= modulenamePlural %> API
 		function showRespond(method, url, data, headers, params) {
 
             // Get the id param from url
@@ -111,13 +111,13 @@
 			if(header == 200) {
 
                 // Get <%= modulename %> by id from <%= modulename %>'s array
-                for(var i = 0; i <= <%= modulename %>s.length - 1; i++) {
+                for(var i = 0; i <= <%= modulenamePlural %>.length - 1; i++) {
 
                     // If <%= modulename %> exists
-                    if(<%= modulename %>s[i].id == id) {
+                    if(<%= modulenamePlural %>[i].id == id) {
 
                         // Return the success header
-                        return [header, {data: <%= modulename %>s[i]}];
+                        return [header, {data: <%= modulenamePlural %>[i]}];
                     }
                 }
 
@@ -130,7 +130,7 @@
 		}
 
 
-		// Function for store <%= modulename %>s API
+		// Function for store <%= modulenamePlural %> API
 		function storeRespond(method, url, data, headers, params) {
 
 			// Get a random header
@@ -140,10 +140,10 @@
 			if(header == 200) {
 
                 // Assisgn <%= modulename %> id - override if inserted
-                data.id = <%= modulename %>s.length;
+                data.id = <%= modulenamePlural %>.length;
 
                 // Insert the new <%= modulename %>
-                <%= modulename %>s.push(data);
+                <%= modulenamePlural %>.push(data);
 
                 // Return the success header
                 return [header, {data: '<%= modulenameCapitalize %> stored'}];
@@ -154,7 +154,7 @@
 		}
 
 
-		// Function for update <%= modulename %>s API
+		// Function for update <%= modulenamePlural %> API
 		function updateRespond(method, url, data, headers, params) {
 
             // Get the id param from url
@@ -167,13 +167,13 @@
 			if(header == 200) {
 
                 // Get <%= modulename %> by id from <%= modulename %>'s array
-                for(var i = 0; i <= <%= modulename %>s.length - 1; i++) {
+                for(var i = 0; i <= <%= modulenamePlural %>.length - 1; i++) {
 
                     // If <%= modulename %> exists
-                    if(<%= modulename %>s[i].id == id) {
+                    if(<%= modulenamePlural %>[i].id == id) {
 
                         // Override the <%= modulename %>
-                        <%= modulename %>s[i] = data;
+                        <%= modulenamePlural %>[i] = data;
 
                         // Return the success header
                         return [header, {data: '<%= modulenameCapitalize %> updated'}];
@@ -220,7 +220,7 @@
 
 				label: 'destroy',
 			    method: 'DELETE',
-			    url: /\/api\/<%= modulename %>s\/(d*)/,
+			    url: /\/api\/<%= modulenamePlural %>\/(d*)/,
 			    params: ['id'],
 			    respond: destroyRespond
 
@@ -228,14 +228,14 @@
 
 				label: 'index',
 			    method: 'GET',
-			    url: '/api/<%= modulename %>s/',
+			    url: '/api/<%= modulenamePlural %>/',
 			    respond: indexRespond
 
 			},{
 
 				label: 'show',
 			    method: 'GET',
-			    url: /\/api\/<%= modulename %>s\/(d*)/,
+			    url: /\/api\/<%= modulenamePlural %>\/(d*)/,
 			    params: ['id'],
 			    respond: showRespond
 
@@ -243,14 +243,14 @@
 
 				label: 'store',
 			    method: 'POST',
-			    url: '/api/<%= modulename %>s/',
+			    url: '/api/<%= modulenamePlural %>/',
 			    respond: storeRespond
 
 			},{
 
 				label: 'update',
 			    method: 'PUT',
-			    url: /\/api\/<%= modulename %>s\/(d*)/,
+			    url: /\/api\/<%= modulenamePlural %>\/(d*)/,
 			    params: ['id'],
 			    respond: updateRespond
 			}];
@@ -258,9 +258,9 @@
 
 
 		// Function for set the array
-		function set<%= modulenameCapitalize %>s() {
+		function set<%= modulenameCapitalizePlural %>() {
 
-            <%= modulename %>s = [];
+            <%= modulenamePlural %> = [];
 		}
 	}
 

@@ -2,26 +2,26 @@
 
   'use strict';
 
-    // Pass the <%= modulename %>sShowCtrl to the app
+    // Pass the <%= modulenamePlural %>IndexCtrl to the app
     angular
         .module('<%= appname %>')
-        .controller('<%= modulename %>sShowCtrl', <%= modulename %>sShowCtrl);
+        .controller('<%= modulenamePlural %>IndexCtrl', <%= modulenamePlural %>IndexCtrl);
 
 
-    // Define the <%= modulename %>sShowCtrl
-    function <%= modulename %>sShowCtrl(<%= modulename %>sFactory, $stateParams) {
+    // Define the <%= modulenamePlural %>IndexCtrl
+    function <%= modulenamePlural %>IndexCtrl(<%= modulenamePlural %>Factory) {
 
 
         // Inject with ng-annotate
         "ngInject";
 
 
-        // Define <%= modulename %>sShow as this for ControllerAs and auto-$scope
-        var <%= modulename %>sShow = this;
+        // Define <%= modulenamePlural %>Index as this for ControllerAs and auto-$scope
+        var <%= modulenamePlural %>Index = this;
 
 
-        // Define the <%= modulename %>sShow functions and objects that will be passed to the view
-        <%= modulename %>sShow.<%= modulename %> = {};                                                // Object for show the <%= modulename %>
+        // Define the <%= modulenamePlural %>Index functions and objects that will be passed to the view
+        <%= modulenamePlural %>Index.<%= modulenamePlural %> = [];                                              // Array for list of <%= modulenamePlural %>
 
 
         /*
@@ -35,15 +35,14 @@
 
 
         initLog();
-        show($stateParams.id);
-
+        index();
 
         /*
         |--------------------------------------------------------------------------
         | Functions
         |--------------------------------------------------------------------------
         |
-        | Declaring all functions used in the <%= modulename %>sShowCtrl
+        | Declaring all functions used in the <%= modulenamePlural %>IndexCtrl
         |
         */
 
@@ -51,21 +50,21 @@
         // Sample for init function
         function initLog() {
 
-            console.log('<%= modulename %>sShowCtrl init');
+            console.log('<%= modulenamePlural %>IndexCtrl init');
         }
 
 
-        // Get the <%= modulename %>
-        function show(id) {
+        // Get all <%= modulenamePlural %>.
+        function index() {
 
-            return <%= modulename %>sFactory.show(id).then(function(data) {
+            return <%= modulenamePlural %>Factory.index().then(function(data) {
 
                 // Custom function for success handling
                 console.log('Result form API with SUCCESS', data);
 
             	// Assign data to array and return them
-	            <%= modulename %>sShow.<%= modulename %> = data;
-	            return <%= modulename %>sShow.<%= modulename %>;
+	            <%= modulenamePlural %>Index.<%= modulenamePlural %> = data.data;
+	            return <%= modulenamePlural %>Index.<%= modulenamePlural %>;
 
             }, function(data) {
 
