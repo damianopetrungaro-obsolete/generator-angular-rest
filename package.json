@@ -1,13 +1,22 @@
 {
-  "name": "generator-test",
-  "version": "0.1.0",
-  "description": "",
+  "name": "generator-angular-rest",
+  "version": "0.1.1",
+  "description": "Generate an angular 1.5 scaffolding, ready for REST API, with a basic mocking setup. Based on John Papa's Style Guide.",
+  "author": "Damiano Petrungaro",
+  "repository": "damianopetrungaro/angular-scaffolding",
+  "license": "MIT",
   "files": [
     "generators/app",
     "generators/module"
   ],
   "keywords": [
-    "generator-test"
+    "yeoman-generator",
+    "scaffolding",
+    "angular",
+    "module",
+    "mock",
+    "rest",
+    "api"
   ],
   "dependencies": {
     "gulp-rename": "^1.2.2",
