@@ -1,6 +1,6 @@
 {
-  "name": "generator-angular-rest",
-  "version": "0.1.5",
+  "name": "generator-angular-test",
+  "version": "0.1.7",
   "description": "Generate an angular 1.5 scaffolding, ready for REST API, with a basic mocking setup. Based on John Papa's Style Guide.",
   "author": "Damiano Petrungaro",
   "repository": "damianopetrungaro/generator-angular-rest",
@@ -9,7 +9,7 @@
   "files": [
     "app",
     "module",
-    "helpers.js"
+    "helper.js"
   ],
   "keywords": [
     "yeoman-generator",
@@ -21,6 +21,7 @@
     "api"
   ],
   "dependencies": {
+    "chalk": "^1.1.1",
     "gulp-rename": "^1.2.2",
     "lingo": "0.0.5",
     "yeoman-generator": "^0.22.5"

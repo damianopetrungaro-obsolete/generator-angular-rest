@@ -7,7 +7,7 @@ module.exports = generators.Base.extend({
   constructor: function () {
     // Calling the super constructor is important so our generator is correctly set up
     generators.Base.apply(this, arguments);
-
+    
     // This makes `appname` a required argument.
     this.argument('moduleName', { type: String, required: true });
   },
