@@ -12,40 +12,42 @@ module.exports = generators.Base.extend({
 
         // Greeting
         this.log(chalk.red(helper.faces));
-
     },
     question: function () {
 
+        // Define this as that
         var that = this;
+
+        // Ask for user input
         this.prompt({
+            name: 'appName',                                            // Define variable name
+            message: 'What will be the name of your application ?',     // Define message to show to the user
+            default: this.appname                                       // Define defaukt vakue (dir name)
+        }, function (response) {
 
-            name: 'appName',
-            message: 'What will be the name of your application ?',
-            default: this.appname
-        }, function (ans) {
-
-            that.log(chalk.yellow("Wow! " + ans.appName + " is a great name for an angular-app"));
+            // Show message to user
+            that.log(chalk.yellow("Wow! " + response.appName + " is a great name for an angular-app"));
             that.log(chalk.red(helper.spaces));
 
-            that.config.set('appName', ans.appName);
-            that._moveAndInstall(ans);
+            // Set appName and continue with installation
+            that.config.set('appName', response.appName);
+            that._moveAndInstall(response);
         });
     },
-    _moveAndInstall: function (ans) {
+    _moveAndInstall: function (response) {
 
+        // Show message to user
         this.log(chalk.red("I am moving all into " + this.appname + " directory and installing dependecies"));
         this.log(chalk.red(helper.spaces));
 
+        // Move templates to directory
         this.fs.copyTpl(
           this.templatePath(),
           this.destinationPath(),
           { appname: helper.lowercase(this.config.get('appName')) }
         );
 
-        //this.npmInstall();
-
-        this.log(chalk.red(helper.spaces));
-        this.log(chalk.red("All ready! \n \n Type  'npm run serve'!"));
-        this.log(chalk.red(helper.spaces));
+        // Install npm dependecies
+        this.npmInstall();
     }
 });
