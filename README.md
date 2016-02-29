@@ -1,6 +1,6 @@
 # Generator Angular Rest
-A micro AngularJS boilerplate for start projects with mocking and routing modules ready,
-based on [Best Practice angular-styleguide/johnpapa](https://github.com/johnpapa/angular-styleguide)
+A micro AngularJS scaffolding for start projects with mocking and routing modules ready,
+based on this [Best Practice angular-styleguide made by johnpapa](https://github.com/johnpapa/angular-styleguide)
 
 #### Based on this [Angular Boilerplate](https://github.com/damianopetrungaro/angular-boilerplate)
 
