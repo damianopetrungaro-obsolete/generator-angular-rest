@@ -29,7 +29,7 @@
 		    state: 'users-index',
 		    config: {
 		        url: '/users',
-		        templateUrl: 'app/modules/users/index/users.indexView.html',
+		        templateUrl: 'app/modules/users/index/users.index.html',
 		        controller: 'usersIndexCtrl',
 		        controllerAs: 'usersIndex'
 		    }
@@ -37,7 +37,7 @@
 		    state: 'users-store',
 		    config: {
 		        url: '/users/store',
-		        templateUrl: 'app/modules/users/store/users.storeView.html',
+		        templateUrl: 'app/modules/users/store/users.store.html',
 		        controller: 'usersStoreCtrl',
 		        controllerAs: 'usersStore'
 		    }
@@ -45,7 +45,7 @@
 		    state: 'users-show',
 		    config: {
 		        url: '/users/:id',
-		        templateUrl: 'app/modules/users/show/users.showView.html',
+		        templateUrl: 'app/modules/users/show/users.show.html',
 		        controller: 'usersShowCtrl',
 		        controllerAs: 'usersShow'
 		    }
@@ -53,7 +53,7 @@
 		    state: 'users-update',
 		    config: {
 		        url: '/users/:id/update',
-		        templateUrl: 'app/modules/users/update/users.updateView.html',
+		        templateUrl: 'app/modules/users/update/users.update.html',
 		        controller: 'usersUpdateCtrl',
 		        controllerAs: 'usersUpdate'
 		    }
@@ -61,7 +61,7 @@
 		    state: 'users-destroy',
 		    config: {
 		        url: '/users/:id/delete',
-		        templateUrl: 'app/modules/users/destroy/users.destroyView.html',
+		        templateUrl: 'app/modules/users/destroy/users.destroy.html',
 		        controller: 'usersDestroyCtrl',
 		        controllerAs: 'usersDestroy'
 		    }

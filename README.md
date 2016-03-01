@@ -29,9 +29,9 @@ Then generate your new project:
 Generators for module, directive, factory and filter
 
 ```bash
-	$ yo angular-rest:module moduleName
-	TO DO - $ yo angular-rest:directive directiveName
-	TO DO - $ yo angular-rest:factory serviceName
-	TO DO - $ yo angular-rest:filter filterName
+	$ yo angular-rest:module
+	$ yo angular-rest:component
+	$ yo angular-rest:factory
+	$ yo angular-rest:filter
 
 ```

@@ -29,7 +29,7 @@
 		    state: 'statics-home',
 		    config: {
 		        url: '/',
-		        templateUrl: 'app/modules/statics/home/statics.homeView.html',
+		        templateUrl: 'app/modules/statics/home/statics.home.html',
 		        controller: 'staticsHomeCtrl',
 		        controllerAs: 'staticsHome'
 		    }

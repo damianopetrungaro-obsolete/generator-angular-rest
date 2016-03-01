@@ -2,6 +2,8 @@ var lingo = require("lingo").en;
 
 // Path
 exports.MODULES_PATH = 'src/app/modules/';
+exports.FACTORIES_PATH = 'src/app/shared/factories/';
+exports.FILTERS_PATH = 'src/app/shared/filters/';
 exports.COMPONENTS_PATH = 'src/app/shared/components/';
 
 // Capitalize
@@ -33,6 +35,18 @@ exports.singular = function (string) {
       return lingo.singularize(string);
   }
   return string;
+};
+
+// Random string
+exports.rand = function (length)
+{
+    var random = "";
+    var letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for( var i=0; i < length; i++ )
+        random += letters.charAt(Math.floor(Math.random() * letters.length));
+
+    return random;
 };
 
 exports.spaces =

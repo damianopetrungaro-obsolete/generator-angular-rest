@@ -29,7 +29,7 @@
 		    state: '<%= modulenamePlural %>-index',
 		    config: {
 		        url: '/<%= modulenamePlural %>',
-		        templateUrl: 'app/modules/<%= modulenamePlural %>/index/<%= modulenamePlural %>.indexView.html',
+		        templateUrl: 'app/modules/<%= modulenamePlural %>/index/<%= modulenamePlural %>.index.html',
 		        controller: '<%= modulenamePlural %>IndexCtrl',
 		        controllerAs: '<%= modulenamePlural %>Index'
 		    }
@@ -37,7 +37,7 @@
 		    state: '<%= modulenamePlural %>-store',
 		    config: {
 		        url: '/<%= modulenamePlural %>/store',
-		        templateUrl: 'app/modules/<%= modulenamePlural %>/store/<%= modulenamePlural %>.storeView.html',
+		        templateUrl: 'app/modules/<%= modulenamePlural %>/store/<%= modulenamePlural %>.store.html',
 		        controller: '<%= modulenamePlural %>StoreCtrl',
 		        controllerAs: '<%= modulenamePlural %>Store'
 		    }
@@ -45,7 +45,7 @@
 		    state: '<%= modulenamePlural %>-show',
 		    config: {
 		        url: '/<%= modulenamePlural %>/:id',
-		        templateUrl: 'app/modules/<%= modulenamePlural %>/show/<%= modulenamePlural %>.showView.html',
+		        templateUrl: 'app/modules/<%= modulenamePlural %>/show/<%= modulenamePlural %>.show.html',
 		        controller: '<%= modulenamePlural %>ShowCtrl',
 		        controllerAs: '<%= modulenamePlural %>Show'
 		    }
@@ -53,7 +53,7 @@
 		    state: '<%= modulenamePlural %>-update',
 		    config: {
 		        url: '/<%= modulenamePlural %>/:id/update',
-		        templateUrl: 'app/modules/<%= modulenamePlural %>/update/<%= modulenamePlural %>.updateView.html',
+		        templateUrl: 'app/modules/<%= modulenamePlural %>/update/<%= modulenamePlural %>.update.html',
 		        controller: '<%= modulenamePlural %>UpdateCtrl',
 		        controllerAs: '<%= modulenamePlural %>Update'
 		    }
@@ -61,7 +61,7 @@
 		    state: '<%= modulenamePlural %>-destroy',
 		    config: {
 		        url: '/<%= modulenamePlural %>/:id/delete',
-		        templateUrl: 'app/modules/<%= modulenamePlural %>/destroy/<%= modulenamePlural %>.destroyView.html',
+		        templateUrl: 'app/modules/<%= modulenamePlural %>/destroy/<%= modulenamePlural %>.destroy.html',
 		        controller: '<%= modulenamePlural %>DestroyCtrl',
 		        controllerAs: '<%= modulenamePlural %>Destroy'
 		    }

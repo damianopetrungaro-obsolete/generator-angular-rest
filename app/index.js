@@ -22,7 +22,7 @@ module.exports = generators.Base.extend({
         this.prompt({
             name: 'appName',                                            // Define variable name
             message: 'What will be the name of your application ?',     // Define message to show to the user
-            default: this.appname                                       // Define defaukt vakue (dir name)
+            default: this.appname                                       // Define default value (dir name)
         }, function (response) {
 
             // Show message to user
