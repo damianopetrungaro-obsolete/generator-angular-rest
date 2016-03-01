@@ -1,4 +1,9 @@
 # Generator Angular Rest
+
+
+[![npm](https://img.shields.io/npm/dt/generator-angular-rest.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-rest)
+[![npm](https://img.shields.io/npm/v/generator-angular-rest.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-rest)
+
 A micro AngularJS scaffolding for start projects with mocking and routing modules ready,
 
 based on this [Best Practice angular-styleguide made by johnpapa](https://github.com/johnpapa/angular-styleguide).
