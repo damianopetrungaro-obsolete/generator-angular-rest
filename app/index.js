@@ -1,5 +1,4 @@
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
 var helper = require('../helper.js');
 
 module.exports = generators.Base.extend({
@@ -11,12 +10,11 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
         // Greeting
-        this.log(chalk.red(helper.faces));
+        this.log(helper.faces);
     },
     prompting: function() {
 
         // Define this as that
-        var that = this;
         var done = this.async();
 
         // Ask for user input
@@ -27,13 +25,12 @@ module.exports = generators.Base.extend({
         }, function (response) {
 
             // Show message to user
-            that.log(chalk.yellow("Wow! " + response.appName + " is a great name for an angular-app"));
-            that.log(chalk.red(helper.spaces));
+            this.log(helper.message("Hey! '" + response.appName + "' is a great name for an angular-app"));
 
             // Set appName and continue with installation
             this.appName  = response.appName;
-
             done();
+
         }.bind(this));
     },
     configuring: function() {
@@ -45,8 +42,7 @@ module.exports = generators.Base.extend({
     writing: function (response) {
 
         // Show message to user
-        this.log(chalk.red("I am moving all into " + this.appname + " directory!"));
-        this.log(chalk.red(helper.spaces));
+        this.log(helper.message("I am moving all into " + this.appname + " directory!"));
 
         // Move templates to directory
         this.fs.copyTpl(
@@ -54,18 +50,18 @@ module.exports = generators.Base.extend({
           this.destinationPath(),
           { appname: helper.lowercase(this.config.get('appName')) }
         );
-
     },
     install: function () {
 
         // Install npm dependecies
-        this.log(chalk.red("I am installing npm"));
-        this.log(chalk.red(helper.spaces));
+        this.log(helper.message("I am installing npm"));
+
+        // Show message to user
         this.npmInstall();
     },
     end: function() {
 
-        // Show message to user
-        this.log(chalk.red("I Bye bye man!"));
-        this.log(chalk.red(helper.spaces));    }
+        // Bye bye!
+        this.log(helper.bye);
+    }
 });

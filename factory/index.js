@@ -1,5 +1,4 @@
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
 var rename = require('gulp-rename');
 var helper = require('../helper.js');
 
@@ -12,12 +11,10 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
         // Greeting
-        this.log(chalk.red(helper.faces));
+        this.log(helper.faces);
     },
     prompting: function() {
 
-        // Define this as that
-        var that = this;
         var done = this.async();
 
         // Ask for user input
@@ -28,8 +25,7 @@ module.exports = generators.Base.extend({
         }, function (response) {
 
             // Show message to user
-            that.log(chalk.yellow("Amaing! " + response.factoryName + " is an amazing name for a factory!"));
-            that.log(chalk.red(helper.spaces));
+            this.log(helper.message("Amazing! '" + response.factoryName + "' is an amazing name for a factory!"));
 
             // Set componentName and continue with installation
             this.factoryName  = response.factoryName;
@@ -50,6 +46,8 @@ module.exports = generators.Base.extend({
         });
     },
     end: function() {
-        this.log('end!');
+
+        // Bye bye!
+        this.log(helper.bye);
     }
 });
