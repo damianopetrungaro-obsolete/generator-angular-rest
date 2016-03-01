@@ -13,10 +13,11 @@ module.exports = generators.Base.extend({
         // Greeting
         this.log(chalk.red(helper.faces));
     },
-    question: function () {
+    prompting: function() {
 
         // Define this as that
         var that = this;
+        var done = this.async();
 
         // Ask for user input
         this.prompt({
@@ -30,14 +31,21 @@ module.exports = generators.Base.extend({
             that.log(chalk.red(helper.spaces));
 
             // Set appName and continue with installation
-            that.config.set('appName', response.appName);
-            that._moveAndInstall(response);
-        });
+            this.appName  = response.appName;
+
+            done();
+        }.bind(this));
     },
-    _moveAndInstall: function (response) {
+    configuring: function() {
+
+        // Set configuration files
+        this.config.set('appName', this.appName);
+
+    },
+    writing: function (response) {
 
         // Show message to user
-        this.log(chalk.red("I am moving all into " + this.appname + " directory and installing dependecies"));
+        this.log(chalk.red("I am moving all into " + this.appname + " directory!"));
         this.log(chalk.red(helper.spaces));
 
         // Move templates to directory
@@ -47,7 +55,17 @@ module.exports = generators.Base.extend({
           { appname: helper.lowercase(this.config.get('appName')) }
         );
 
+    },
+    install: function () {
+
         // Install npm dependecies
+        this.log(chalk.red("I am installing npm"));
+        this.log(chalk.red(helper.spaces));
         this.npmInstall();
-    }
+    },
+    end: function() {
+
+        // Show message to user
+        this.log(chalk.red("I Bye bye man!"));
+        this.log(chalk.red(helper.spaces));    }
 });

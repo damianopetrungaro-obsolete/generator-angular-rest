@@ -1,50 +1,57 @@
 var generators = require('yeoman-generator');
-var rename = require('gulp-rename');
 var chalk = require('chalk');
+var rename = require('gulp-rename');
 var helper = require('../helper.js');
 
 module.exports = generators.Base.extend({
-  // The name `constructor` is important here
-  constructor: function () {
 
-    // Calling the super constructor is important so our generator is correctly set up
-    generators.Base.apply(this, arguments);
+    // The name `constructor` is important here
+    constructor: function () {
 
-    // Greeting
-    this.log(chalk.red(helper.faces));
-  },
-  question: function () {
+        // Calling the super constructor is important so our generator is correctly set up
+        generators.Base.apply(this, arguments);
 
-      // Define this as that
-      var that = this;
+        // Greeting
+        this.log(chalk.red(helper.faces));
+    },
+    prompting: function() {
 
-      // Ask for user input
-      this.prompt({
-          name: 'componentName',                                 // Define variable name
-          message: 'What will be the name of your component ?',  // Define message to show to the user
-          default: helper.rand(6)                              // Define default value
-      }, function (response) {
+        // Define this as that
+        var that = this;
+        var done = this.async();
 
-          // Show message to user
-          that.log(chalk.yellow("Amaing! " + response.componentName + " is an amazing name for a component!"));
-          that.log(chalk.red(helper.spaces));
+        // Ask for user input
+        this.prompt({
+            name: 'componentName',                                 // Define variable name
+            message: 'What will be the name of your component ?',  // Define message to show to the user
+            default: helper.rand(6)                              // Define default value
+        }, function (response) {
 
-          // Set componentName and continue with installation
-          that._moveAndInstall(response.componentName);
-      });
-  },
-  _moveAndInstall: function (componentName) {
+            // Show message to user
+            that.log(chalk.yellow("Amaing! " + response.componentName + " is an amazing name for a component!"));
+            that.log(chalk.red(helper.spaces));
 
-    // Add transform strep Register for manage files before moving
-    this.registerTransformStream(rename({prefix: helper.lowercase(componentName) + '-'}));
+            // Set componentName and continue with installation
+            this.componentName  = response.componentName;
+            done();
+        }.bind(this));
+    },
+    writing: function () {
 
-    // Move templates to directory
-    this.fs.copyTpl(
-      this.templatePath(),
-      this.destinationPath(helper.COMPONENTS_PATH + componentName + '-component'),{
-          componentname: helper.lowercase(componentName),
-          componentnameCapitalize: helper.capitalize(componentName),
-        appname: helper.lowercase(this.config.get('appName'))
-    });
-  }
+        // Add transform strep Register for manage files before moving
+        this.registerTransformStream(rename({prefix: helper.lowercase(this.componentName) + '-'}));
+
+        // Move templates to directory
+        this.fs.copyTpl(
+          this.templatePath(),
+          this.destinationPath(helper.COMPONENTS_PATH + this.componentName + '-component'),{
+              componentname: helper.lowercase(this.componentName),
+              componentnameCapitalize: helper.capitalize(this.componentName),
+            appname: helper.lowercase(this.config.get('appName'))
+        });
+
+    },
+    end: function() {
+        this.log('end!');
+    }
 });
