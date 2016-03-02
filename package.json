@@ -8,6 +8,9 @@
   "main": "app/index.js",
   "files": [
     "app",
+    "component",
+    "factory",
+    "filter",
     "module",
     "helper.js"
   ],
