@@ -21,12 +21,13 @@ First, install
     $ npm install -g generator-angular-rest
 ```
 
-Then generate your new project:
+Then generate and start your new project:
 
 ```bash
     $ mkdir myNewproject
     $ cd myNewproject
     $ yo angular-rest
+    $ npm run serve
 ```
 
 ## Running Generator:
