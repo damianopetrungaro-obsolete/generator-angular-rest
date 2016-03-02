@@ -1,10 +1,11 @@
 {
   "name": "angular-boilerplate",
   "version": "1.0.0",
-  "description": "A simple AngularJS Boilerplate based on JohnPapa style guide",
+  "description": "A simple AngularJS Boilerplate based on John Papa's style guide",
   "main": "src/index.html",
   "scripts": {
-    "serve": "live-server --open=src --entry-file=src/index.html  --quiet | gulp"
+    "serve": "live-server --open=src --entry-file=src/index.html  --quiet | gulp --env=dev",
+    "prod": "gulp production --env=prod"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-uglify": "^1.5.2",
+    "gulp-util": "^3.0.7",
     "jshint": "^2.9.1",
     "live-server": "^0.9.2",
     "require-dir": "^0.3.0"

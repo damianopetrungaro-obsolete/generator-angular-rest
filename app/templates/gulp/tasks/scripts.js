@@ -5,20 +5,19 @@ var gulp = 			require('gulp'),
 	rename = 		require('gulp-rename'),
 	uglify = 		require('gulp-uglify'),
 	concat = 		require('gulp-concat'),
-	ngAnnotate = 	require('gulp-ng-annotate');
+	ngAnnotate = 	require('gulp-ng-annotate'),
+	gutil = 		require('gulp-util');
 
 // Minify and concat angular app
 gulp.task('scripts', function() {
 
 	return gulp.src([
 
-				paths.js.modules,					// Get all modules
-				paths.js.files						// Get all the other files
+				paths.js.modules,											// Get all modules
+				paths.js.files												// Get all the other files
 			])
-			.pipe(ngAnnotate())
-			.pipe(concat(paths.js.bundle))			// Concat all file in once
-			.pipe(gulp.dest(paths.js.folder.dest))	// Put the file into js folder
-			.pipe(uglify())							// Minify the code
-			.pipe(rename({ extname: '.min.js' }))	// Add .min.js extension
-			.pipe(gulp.dest(paths.js.folder.dest));	// Put the minified file into js folder
+			.pipe(gutil.env.env === 'prod' ? ngAnnotate(): gutil.noop()) 	// Automatically auto inject angular dependecies
+			.pipe(concat(paths.js.bundle))									// Concat all file in once
+			.pipe(gutil.env.env === 'prod' ? uglify() : gutil.noop()) 		// Minify the code if in production
+			.pipe(gulp.dest(paths.js.folder.dest));							// Put the file into js folder
 });

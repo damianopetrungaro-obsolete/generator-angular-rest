@@ -57,24 +57,10 @@ exports.message = function (string) {
 };
 
 
-// Return message
-exports.faces =
-"===============================================================================\n" +
-"===============================================================================\n" +
-" Hello Angular-rest\n" +
-" Thank you for using me!\n" +
-"     _-----_\n" +
-"    |       |    .----------------------.\n" +
-"    |--(o)--|    |       Rest API       |\n" +
-"   `---------´   |         and          |\n" +
-"    ( _´U`_ )    |       Mocking        |\n" +
-"    /___A___\\    |                      |\n" +
-"     |  ~  |     |    Made with love    |\n" +
-"   __'.___.'__   '----------------------'\n" +
-" ´   `  |° ´ Y `\n" +
-"===============================================================================\n" +
-"===============================================================================\n";
-
-
-// Return message
-exports.bye = "\n\n\n＼( ･_･) All done! Bye bye!  ＼( ･_･)\n\n\n";
+// Return messages
+exports.welecomeApp =       "'Allo 'Allo! \n Are you ready for a REST app? \n Let's do it!";
+exports.welecomeComponent = "'Allo 'Allo! \n You need a component ah? \n Let's do it!";
+exports.welecomeFactory =   "'Allo 'Allo! \n I know.. \n You want a factory... \n Let's do it!";
+exports.welecomeFilter =    "'Allo 'Allo! \n Hey! Did you said filter? \n Let's do it!";
+exports.welecomeModule =    "'Allo 'Allo! \n Wanna build an entire module? \n No problem! \n Let's do it!";
+exports.bye = "All done! \n Thanks for using me! \n Hope to see you again!";

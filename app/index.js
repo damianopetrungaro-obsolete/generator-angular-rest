@@ -1,5 +1,6 @@
-var generators = require('yeoman-generator');
-var helper = require('../helper.js');
+var generators = require('yeoman-generator'),
+    helper = require('../helper.js'),
+    yosay = require('yosay');
 
 module.exports = generators.Base.extend({
 
@@ -10,7 +11,7 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
         // Greeting
-        this.log(helper.faces);
+        this.log(yosay(helper.welecomeApp));
     },
     prompting: function() {
 
@@ -53,15 +54,15 @@ module.exports = generators.Base.extend({
     },
     install: function () {
 
-        // Install npm dependecies
+        // Show message to user
         this.log(helper.message("I am installing npm"));
 
-        // Show message to user
+        // Install npm dependecies
         this.npmInstall();
     },
     end: function() {
 
         // Bye bye!
-        this.log(helper.bye);
+        this.log(yosay(helper.bye));
     }
 });

@@ -1,6 +1,7 @@
-var generators = require('yeoman-generator');
-var rename = require('gulp-rename');
-var helper = require('../helper.js');
+var generators = require('yeoman-generator'),
+    helper = require('../helper.js'),
+    rename = require('gulp-rename'),
+    yosay = require('yosay');
 
 module.exports = generators.Base.extend({
 
@@ -11,7 +12,7 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
         // Greeting
-        this.log(helper.faces);
+        this.log(yosay(helper.welecomeComponent));
     },
     prompting: function() {
 
@@ -50,6 +51,6 @@ module.exports = generators.Base.extend({
     end: function() {
 
         // Bye bye!
-        this.log(helper.bye);
+        this.log(yosay(helper.bye));
     }
 });
