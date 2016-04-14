@@ -10,6 +10,26 @@ based on this [Best Practice angular-styleguide made by johnpapa](https://github
 
 #### Based on this [Angular Boilerplate](https://github.com/damianopetrungaro/angular-boilerplate).
 
+## News
+#### As soon as possible will be avaiable new modules:
+
+#### angular-rest:cordova
+Will geneate an app compatible with ngCordova
+
+#### angular-rest:module-cordova
+Will geneate a module compatible with ngCordova
+
+
+#### angular-rest:factory-cordova
+Will geneate a factory compatible with SQLite operations (for ngCordova)
+
+#### angular-rest:repository-cordova
+Will generate a factory that will handle database queries
+
+#### angular-rest:validation
+Will generate a factory that manage the form validation
+
+
 ## Installation
 
 First, install
