@@ -26,9 +26,6 @@ Will geneate a factory compatible with SQLite operations (for ngCordova)
 #### angular-rest:repository-cordova
 Will generate a factory that will handle database queries
 
-#### angular-rest:validation
-Will generate a factory that manage the form validation
-
 
 ## Installation
 
@@ -116,9 +113,10 @@ The folder will be pushed here
     |   |___name.update.js
     |   |___name.update.html
     |
-    |___name.factory.js
     |___name.mock.js
     |___name.route.js
+    |___name.factory.js
+    |___name.validator.js
 
 The core modules are ```name.factory.js```, ```name.mock.js```, ```name.route.js``` (where name is the module name).
 
@@ -127,6 +125,8 @@ The core modules are ```name.factory.js```, ```name.mock.js```, ```name.route.js
 ```name.mock.js``` generate a fake response (also simulating errors).
 
 ```name.route.js``` generate a routing for the module.
+
+```name.validator.js``` generate a validation file for the module's model. Use [valdr validation] https://github.com/netceteragroup/valdr
 
 All the other directory ```delete```, ```index```, ```show```, ```store``` and ```update``` are the actions avaiable for the module.
 

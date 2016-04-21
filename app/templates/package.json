@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "valdr": "^1.1.5"
   }
 }
