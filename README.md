@@ -126,7 +126,7 @@ The core modules are ```name.factory.js```, ```name.mock.js```, ```name.route.js
 
 ```name.route.js``` generate a routing for the module.
 
-```name.validator.js``` generate a validation file for the module's model. Use [valdr validation] https://github.com/netceteragroup/valdr
+```name.validator.js``` generate a validation file for the module's model. Use [valdr validation](https://github.com/netceteragroup/valdr)
 
 All the other directory ```delete```, ```index```, ```show```, ```store``` and ```update``` are the actions avaiable for the module.
 
